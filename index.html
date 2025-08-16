@@ -680,6 +680,34 @@
             color: var(--text-primary);
         }
 
+        /* Added responsive contact info grid for better mobile layout */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info-item {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-info-item h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            font-weight: 600;
+        }
+
+        .contact-info-item p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.4;
+        }
+
         /* Map */
         .map-container {
             height: 300px;
@@ -807,6 +835,26 @@
                 gap: 2rem;
             }
 
+            /* Contact info items in 2x2 grid on small screens */
+            .contact-info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .contact-info-item {
+                padding: 0.8rem;
+            }
+
+            .contact-info-item h4 {
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .contact-info-item p {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+
             .modal-content {
                 margin: 1rem auto;
                 padding: 1rem;
@@ -877,6 +925,12 @@
                 gap: 2rem;
             }
 
+            /* Contact info items in 2x2 grid on small landscape screens */
+            .contact-info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+
             .modal-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -910,8 +964,14 @@
             }
 
             .contact-grid {
-                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            /* Contact info items in 2x2 grid on tablets */
+            .contact-info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
             }
 
             .modal-grid {
@@ -944,6 +1004,12 @@
 
             .whatsapp-btn {
                 padding: 1rem 1.5rem;
+            }
+
+            /* Contact info items in single column on desktop */
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .map-container {
@@ -1325,18 +1391,27 @@
             
             <div class="contact-info">
                 <h3>Visit Our Showroom</h3>
-                <div style="margin-bottom: 2rem;">
-                    <p style="margin-bottom: 0.5rem;"><strong>Address:</strong></p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">123 Jewelry Market, Connaught Place<br>New Delhi - 110001, India</p>
+                <!-- Restructured contact info into responsive grid cards -->
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <h4>Address</h4>
+                        <p>123 Jewelry Market<br>Connaught Place<br>New Delhi - 110001</p>
+                    </div>
                     
-                    <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong></p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">+91 98765 43210</p>
+                    <div class="contact-info-item">
+                        <h4>Phone</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
                     
-                    <p style="margin-bottom: 0.5rem;"><strong>Email:</strong></p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">info@shreyajewels.com</p>
+                    <div class="contact-info-item">
+                        <h4>Email</h4>
+                        <p>info@shreyajewels.com</p>
+                    </div>
                     
-                    <p style="margin-bottom: 0.5rem;"><strong>Opening Hours:</strong></p>
-                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Mon-Sat: 10:00 AM - 8:00 PM<br>Sunday: 11:00 AM - 6:00 PM</p>
+                    <div class="contact-info-item">
+                        <h4>Opening Hours</h4>
+                        <p>Mon-Sat: 10AM - 8PM<br>Sunday: 11AM - 6PM</p>
+                    </div>
                 </div>
                 
                 <div class="map-container">
